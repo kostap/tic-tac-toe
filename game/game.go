@@ -8,7 +8,7 @@ type Player string
 
 const (
 	PlayerX Player = "X"
-	PlayerY Player = "Y"
+	PlayerO Player = "O"
 	Empty   Player = ""
 )
 
@@ -71,7 +71,7 @@ func (g *Game) MakeMove(row, col int) error {
 
 func (g *Game) ChangePlayer() {
 	if g.CurrentPlayer == PlayerX {
-		g.CurrentPlayer = PlayerY
+		g.CurrentPlayer = PlayerO
 	} else {
 		g.CurrentPlayer = PlayerX
 	}

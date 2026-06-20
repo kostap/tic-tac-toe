@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/kostap/tic-tac-toe/handler"
 	"log"
 	"net/http"
 	"os"
@@ -13,14 +14,17 @@ import (
 )
 
 func main() {
+	gameHandler := handler.NewGameHandler()
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := fmt.Fprintf(w, "Tic-Tac-Toe Game Server")
-		if err != nil {
-			log.Printf("Error writing response: %v", err)
-		}
-	})
+	// API endpoints
+	mux.HandleFunc("/api/new-game", gameHandler.NewGame)
+	mux.HandleFunc("/api/move", gameHandler.MakeMove)
+	mux.HandleFunc("/api/state", gameHandler.GetState)
+
+	// Main page
+	fs := http.FileServer(http.Dir("static"))
+	mux.Handle("/", fs)
 
 	server := &http.Server{
 		Addr:    ":8080",
