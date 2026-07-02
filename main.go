@@ -23,7 +23,7 @@ func main() {
 	mux.HandleFunc("/api/state", gameHandler.GetState)
 
 	// Main page
-	fs := http.FileServer(http.Dir("static"))
+	fs := http.FileServer(http.Dir("web"))
 	mux.Handle("/", fs)
 
 	server := &http.Server{
