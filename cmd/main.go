@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/kostap/tic-tac-toe/handler"
+	"github.com/kostap/tic-tac-toe/internal/handler"
 	"log"
 	"net/http"
 	"os"
@@ -23,7 +23,7 @@ func main() {
 	mux.HandleFunc("/api/state", gameHandler.GetState)
 
 	// Main page
-	fs := http.FileServer(http.Dir("web"))
+	fs := http.FileServer(http.Dir("../web"))
 	mux.Handle("/", fs)
 
 	server := &http.Server{

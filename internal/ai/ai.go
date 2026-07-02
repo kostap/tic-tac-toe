@@ -3,7 +3,7 @@
 package ai
 
 import (
-	"github.com/kostap/tic-tac-toe/game"
+	"github.com/kostap/tic-tac-toe/internal/game"
 	"math/rand/v2"
 )
 
