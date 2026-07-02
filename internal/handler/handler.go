@@ -2,8 +2,8 @@ package handler
 
 import (
 	"encoding/json"
-	"github.com/kostap/tic-tac-toe/ai"
-	"github.com/kostap/tic-tac-toe/game"
+	"github.com/kostap/tic-tac-toe/internal/ai"
+	"github.com/kostap/tic-tac-toe/internal/game"
 	"net/http"
 )
 
