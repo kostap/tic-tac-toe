@@ -1,5 +1,4 @@
-![](Tic-Tac-Toe.png)
-
+![](https://raw.githubusercontent.com/kostap/tic-tac-toe/master/Tic-Tac-Toe.png)
 # Tic-Tac-Toe
 
 A simple tic-tac-toe game with a Go backend and vanilla JavaScript frontend. Play against the computer in your browser.
